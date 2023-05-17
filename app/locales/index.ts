@@ -16,21 +16,11 @@ export type { LocaleType } from "./cn";
 export const AllLangs = [
   "en",
   "cn",
-  "tw",
-  "fr",
-  "es",
-  "it",
-  "tr",
-  "jp",
-  "de",
-  "vi",
-  "ru",
-  "cs",
 ] as const;
 export type Lang = (typeof AllLangs)[number];
 
 const LANG_KEY = "lang";
-const DEFAULT_LANG = "en";
+const DEFAULT_LANG = "cn";
 
 function getItem(key: string) {
   try {
@@ -81,14 +71,4 @@ export function changeLang(lang: Lang) {
 export default {
   en: EN,
   cn: CN,
-  tw: TW,
-  fr: FR,
-  es: ES,
-  it: IT,
-  tr: TR,
-  jp: JP,
-  de: DE,
-  vi: VI,
-  ru: RU,
-  cs: CS,
 }[getLang()] as typeof CN;
